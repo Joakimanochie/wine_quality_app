@@ -69,7 +69,7 @@ class ConfigurationManager:
     
     def get_model_trainer_config(self) -> ModelTrainerConfig:
         config = self.config.model_trainer
-        params = self.params.ADABOOST
+        params = self.params.ElasticNet
         schema =  self.schema.TARGET_COLUMN
 
         create_directories([config.root_dir])
