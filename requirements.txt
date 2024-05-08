@@ -7,7 +7,9 @@ python-box==6.0.2
 pyYAML
 ensure==1.0.2
 joblib
+statsmodels
 types-pyYAML
 Flask
 Flask-Cors
+seaborn
 -e .
