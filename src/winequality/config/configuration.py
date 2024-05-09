@@ -76,11 +76,13 @@ class ConfigurationManager:
 
         model_trainer_config = ModelTrainerConfig(
             root_dir=config.root_dir,
-            train_data_path = config.train_data_path,
-            test_data_path = config.test_data_path,
+            X_train_data_path = config.X_train_data_path,
+            X_test_data_path = config.X_test_data_path,
+            y_train_data_path = config.y_train_data_path,
+            y_test_data_path = config.y_test_data_path,
             model_name = config.model_name,
-            alpha = params.alpha,
-            l1_ratio = params.l1_ratio,
+            learning_rate= params.learning_rate,
+            n_estimators= params.n_estimators,
             target_column = schema.name
             
         )
