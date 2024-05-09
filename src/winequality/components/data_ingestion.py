@@ -1,7 +1,7 @@
 import os
 import urllib.request as request
 import zipfile
-from winequality import logger
+from src import logger
 from winequality.utils.common import get_size
 from winequality.entity.config_entity import DataIngestionConfig
 from pathlib import Path

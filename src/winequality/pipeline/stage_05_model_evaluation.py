@@ -1,6 +1,6 @@
 from winequality.config.configuration import ConfigurationManager
 from winequality.components.model_evaluation import ModelEvaluation
-from winequality import logger
+from src import logger
 
 
 STAGE_NAME = "Model evaluation stage"

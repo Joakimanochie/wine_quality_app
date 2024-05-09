@@ -1,6 +1,6 @@
 from winequality.config.configuration import ConfigurationManager
 from winequality.components.model_trainer import ModelTrainer
-from winequality import logger
+from src import logger
 
 
 STAGE_NAME = "Model Trainer stage"

@@ -1,5 +1,5 @@
 import os
-from winequality import logger
+from src import logger
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import Normalizer
 import pandas as pd
