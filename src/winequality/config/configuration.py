@@ -69,7 +69,7 @@ class ConfigurationManager:
     
     def get_model_trainer_config(self) -> ModelTrainerConfig:
         config = self.config.model_trainer
-        params = self.params.ElasticNet
+        params = self.params.AdaBoostRegressor
         schema =  self.schema.TARGET_COLUMN
 
         create_directories([config.root_dir])
@@ -77,9 +77,7 @@ class ConfigurationManager:
         model_trainer_config = ModelTrainerConfig(
             root_dir=config.root_dir,
             X_train_data_path = config.X_train_data_path,
-            X_test_data_path = config.X_test_data_path,
             y_train_data_path = config.y_train_data_path,
-            y_test_data_path = config.y_test_data_path,
             model_name = config.model_name,
             learning_rate= params.learning_rate,
             n_estimators= params.n_estimators,
@@ -93,14 +91,15 @@ class ConfigurationManager:
     
     def get_model_evaluation_config(self) -> ModelEvaluationConfig:
         config = self.config.model_evaluation
-        params = self.params.ElasticNet
+        params = self.params.AdaBoostRegressor
         schema =  self.schema.TARGET_COLUMN
 
         create_directories([config.root_dir])
 
         model_evaluation_config = ModelEvaluationConfig(
             root_dir=config.root_dir,
-            test_data_path=config.test_data_path,
+            y_test_data_path = config.y_test_data_path,
+            X_test_data_path = config.X_test_data_path,
             model_path = config.model_path,
             all_params=params,
             metric_file_name = config.metric_file_name,
