@@ -1,5 +1,4 @@
 import os
-from src import logger
 import pandas as pd
 from winequality.entity.config_entity import DataValidationConfig
 

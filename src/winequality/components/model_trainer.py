@@ -1,6 +1,5 @@
 import pandas as pd
 import os
-from src import logger
 from sklearn.ensemble import AdaBoostRegressor
 import joblib
 from winequality.entity.config_entity import ModelTrainerConfig

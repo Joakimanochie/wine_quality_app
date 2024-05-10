@@ -1,7 +1,7 @@
 import os
 import urllib.request as request
 import zipfile
-from src import logger
+from src.logger import logging
 from winequality.utils.common import get_size
 from winequality.entity.config_entity import DataIngestionConfig
 from pathlib import Path
@@ -19,9 +19,9 @@ class DataIngestion:
                 url = self.config.source_URL,
                 filename = self.config.local_data_file
             )
-            logger.info(f"{filename} download! with following info: \n{headers}")
+            logging.info(f"{filename} download! with following info: \n{headers}")
         else:
-            logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
+            logging.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
 
 
 

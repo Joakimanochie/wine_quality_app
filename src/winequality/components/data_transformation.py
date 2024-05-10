@@ -1,5 +1,5 @@
 import os
-from src import logger
+from src.logger import logging
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import Normalizer
 import pandas as pd
@@ -60,11 +60,11 @@ class DataTransformation:
         y_test.to_csv(os.path.join(self.config.root_dir, "y_test.csv"),index = False)
         X_test.to_csv(os.path.join(self.config.root_dir, "X_test.csv"),index = False)
 
-        logger.info("Splited data into training and test sets")
-        logger.info(y_train.shape)
-        logger.info(X_train.shape)
-        logger.info(y_test.shape)
-        logger.info(X_test.shape)
+        logging.info("Splited data into training and test sets")
+        logging.info(y_train.shape)
+        logging.info(X_train.shape)
+        logging.info(y_test.shape)
+        logging.info(X_test.shape)
 
         print(y_train.shape)
         print(X_train.shape)

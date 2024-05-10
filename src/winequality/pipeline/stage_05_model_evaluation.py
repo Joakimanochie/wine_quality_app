@@ -1,6 +1,6 @@
 from winequality.config.configuration import ConfigurationManager
 from winequality.components.model_evaluation import ModelEvaluation
-from src import logger
+from src.logger import logging
 
 
 STAGE_NAME = "Model evaluation stage"
@@ -20,10 +20,10 @@ class ModelEvaluationTrainingPipeline:
 
 if __name__ == '__main__':
     try:
-        logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+        logging.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
         obj = ModelEvaluationTrainingPipeline()
         obj.main()
-        logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+        logging.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
     except Exception as e:
-        logger.exception(e)
+        logging.exception(e)
         raise e
