@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 import os 
+import joblib
+from pathlib import Path
 import numpy as np
 import pandas as pd
 from winequality.pipeline.prediction import PredictionPipeline
@@ -39,8 +41,13 @@ def index():
             sulphates =float(request.form['sulphates'])
             alcohol =float(request.form['alcohol'])
        
-         
+            #model = joblib.load(Path('artifacts/model_trainer/model.joblib'))
+            # Manually create feature names (replace with actual names if available)
+            feature_names = ['Feature 0','Feature 1','Feature 2','Feature 3','Feature 4','Feature 5',
+                    'Feature 6','Feature 7','Feature 8','Feature 9','Feature 10']
+
             data = [fixed_acidity,volatile_acidity,citric_acid,residual_sugar,chlorides,free_sulfur_dioxide,total_sulfur_dioxide,density,pH,sulphates,alcohol]
+            data = pd.DataFrame([data], columns=feature_names)
             data = np.array(data).reshape(1, 11)
             
             
